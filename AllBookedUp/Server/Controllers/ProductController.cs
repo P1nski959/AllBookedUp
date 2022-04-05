@@ -28,5 +28,11 @@ namespace AllBookedUp.Server.Controllers
             return Ok(response);
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ServiceResponse<Product>>> GetProductById(int id)
+        {
+            var result = await _productService.GetProductById(id);
+            return Ok(result);
+        }
     }
 }

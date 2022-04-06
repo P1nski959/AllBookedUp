@@ -56,5 +56,12 @@ namespace AllBookedUp.Server.Controllers
             var result = await _productService.GetProductSearchSuggestions(searchText);
             return Ok(result);
         }
+
+        [HttpGet("featured")]
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetFeaturedProducts()
+        {
+            var result = await _productService.GetFeaturedProducts();
+            return Ok(result);
+        }
     }
 }

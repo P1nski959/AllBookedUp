@@ -5,11 +5,12 @@
     <input @bind-value="searchText"
            @bind-value:event="oninput"
            type="search"
+           list="products"
            @onkeyup="HandleSearch"
            class="form-control"
            placeholder="Search..."
            @ref="searchInput"/>
-    <datalist>
+    <datalist id="products">
         @foreach (var suggestion in suggestions)
         {
             <option>@suggestion</option>

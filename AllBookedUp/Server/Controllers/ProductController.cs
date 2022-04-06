@@ -43,14 +43,14 @@ namespace AllBookedUp.Server.Controllers
 
         }
 
-        [HttpGet("SearchSuggestions/{searchText}")]
+        [HttpGet("search/{searchText}")]
         public async Task<ActionResult<ServiceResponse<List<Product>>>> SearchProducts(string searchText)
         {
             var result = await _productService.SearchProducts(searchText);
             return Ok(result);
         }
 
-        [HttpGet("search/{searchText}")]
+        [HttpGet("SearchSuggestions/{searchText}")]
         public async Task<ActionResult<ServiceResponse<List<string>>>> GetProductSearchSuggestions(string searchText)
         {
             var result = await _productService.GetProductSearchSuggestions(searchText);

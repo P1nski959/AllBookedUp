@@ -42,7 +42,8 @@ namespace AllBookedUp.Server.Data
                         Description = "Seconds before the Earth is demolished to make way for a galactic freeway, Arthur Dent is plucked off the planet by his friend Ford Prefect, a researcher for the revised edition of The Hitchhiker's Guide to the Galaxy who, for the last fifteen years, has been posing as an out-of-work actor.Together this dynamic pair begin a journey through space aided by quotes from The Hitchhiker's Guide and a galaxy-full of fellow travelers: Zaphod Beeblebroxâ€”the two-headed, three-armed ex-hippie and totally out-to-lunch president of the galaxy; Trillian, Zaphod's girlfriend (formally Tricia McMillan), whom Arthur tried to pick up at a cocktail party once upon a time zone; Marvin, a paranoid, brilliant, and chronically depressed robot; Veet Voojagig, a former graduate student who is obsessed with the disappearance of all the ballpoint pens he bought over the years.",
                         ImageUrl = "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
                         Price = 9.99m,
-                        CategoryId = 1
+                        CategoryId = 1,
+                        Featured = true
                     },
                     new Product
                     {
@@ -69,7 +70,8 @@ namespace AllBookedUp.Server.Data
                         Description = "Jack Torrance's new job at the Overlook Hotel is the perfect chance for a fresh start. As the off-season caretaker at the atmospheric old hotel, he'll have plenty of time to spend reconnecting with his family and working on his writing. But as the harsh winter weather sets in, the idyllic location feels ever more remote...and more sinister. And the only one to notice the strange and terrible forces gathering around the Overlook is Danny Torrance, a uniquely gifted five-year-old.",
                         ImageUrl = "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353277730l/11588.jpg",
                         Price = 6.99m,
-                        CategoryId = 1
+                        CategoryId = 1,
+                        Featured = true
                     },
                     new Product
                     {
@@ -96,7 +98,8 @@ namespace AllBookedUp.Server.Data
                         Description = "This four-volume, boxed set contains J.R.R. Tolkien's epic masterworks The Hobbit and the three volumes of The Lord of the Rings (The Fellowship of the Ring, The Two Towers, and The Return of the King).In The Hobbit, Bilbo Baggins is whisked away from his comfortable, unambitious life in Hobbiton by the wizard Gandalf and a company of dwarves. He finds himself caught up in a plot to raid the treasure hoard of Smaug the Magnificent, a large and very dangerous dragon.The Lord of the Rings tells of the great quest undertaken by Frodo Baggins and the Fellowship of the Ring: Gandalf the wizard; the hobbits Merry, Pippin, and Sam; Gimli the dwarf; Legolas the elf; Boromir of Gondor; and a tall, mysterious stranger called Strider. J.R.R. Tolkien's three volume masterpiece is at once a classic myth and a modern fairy taleâ€”a story of high and heroic adventure set in the unforgettable landscape of Middle-earth",
                         ImageUrl = "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1346072396l/30.jpg",
                         Price = 7.99m,
-                        CategoryId = 2
+                        CategoryId = 2,
+                        Featured = true
                     },
                     new Product
                     {
@@ -114,7 +117,8 @@ namespace AllBookedUp.Server.Data
                         Description = "Lyra is rushing to the cold, far North, where witch clans and armored bears rule. North, where the Gobblers take the children they steal--including her friend Roger. North, where her fearsome uncle Asriel is trying to build a bridge to a parallel world.Can one small girl make a difference in such great and terrible endeavors? This is Lyra: a savage, a schemer, a liar, and as fierce and true a champion as Roger or Asriel could want--but what Lyra doesn't know is that to help one of them will be to betray the other.",
                         ImageUrl = "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505766203l/119322._SX318_.jpg",
                         Price = 6.99m,
-                        CategoryId = 2
+                        CategoryId = 2,
+                        Featured = true
                     },
                     new Product
                     {
@@ -168,7 +172,8 @@ namespace AllBookedUp.Server.Data
                         Description = "Daunted by the singular sexual tastes and dark secrets of the beautiful, tormented young entrepreneur Christian Grey, Anastasia Steele has broken off their relationship to start a new career with a Seattle publishing house. But desire for Christian still dominates her every waking thought, and when he proposes a new arrangement, Anastasia cannot resist. They rekindle their searing sensual affair, and Anastasia learns more about the harrowing past of her damaged, driven, and demanding Fifty Shades. While Christian wrestles with his inner demons, Anastasia must confront her anger and envy of the women who came before her and make the most important decision of her life. Erotic, sparkling and suspenseful, Fifty Shades Darker is the irresistibly addictive second part of the Fifty Shades trilogy. ",
                         ImageUrl = "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1358266080l/11857408.jpg",
                         Price = 9.99m,
-                        CategoryId = 3
+                        CategoryId = 3,
+                        Featured = true
                     }
 
                 );

@@ -49,7 +49,7 @@ namespace AllBookedUp.Client.Services.ProductService
             Products = result.Data;
             if (Products.Count == 0)
             {
-                Message = "Sorry, unfortunately no products could be found.";
+                Message = "No Products Found...";
             }
             ProductsChanged.Invoke();
         }

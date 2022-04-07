@@ -19,6 +19,7 @@ namespace AllBookedUp.Server.Services.CategoryService
 
         public async Task<ServiceResponse<List<Category>>> GetCategories()
         {
+            //Gets categories as List from SQL database
             var categories = await _context.Categories.ToListAsync();
             return new ServiceResponse<List<Category>>
             {

@@ -28,6 +28,7 @@ else
     [Parameter]
     public int Id { get; set; }
 
+    //Products are Loaded from Product Service
     protected override async Task OnParametersSetAsync()
     {
         message = "Loading Product...";

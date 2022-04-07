@@ -21,6 +21,7 @@ namespace AllBookedUp.Server.Controllers
             _productService = productService;
         }
 
+        //retrieves products from the ProductService class file
         [HttpGet]
         public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProducts()
         {
@@ -28,6 +29,7 @@ namespace AllBookedUp.Server.Controllers
             return Ok(response);
         }
 
+        //retrieves single product from the ProductService class file
         [HttpGet("{id}")]
         public async Task<ActionResult<ServiceResponse<Product>>> GetProductById(int id)
         {
@@ -35,6 +37,7 @@ namespace AllBookedUp.Server.Controllers
             return Ok(result);
         }
 
+        //retrieves a list of products that belond to the CategoryUrl from ProductService class
         [HttpGet("category/{categoryUrl}")]
         public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProductByCategory(string categoryUrl)
         {
@@ -43,6 +46,7 @@ namespace AllBookedUp.Server.Controllers
 
         }
 
+        //retrieves search results from ProductService class
         [HttpGet("search/{searchText}/{page}")]
         public async Task<ActionResult<ServiceResponse<ProductSearchResult>>> SearchProducts(string searchText, int page = 1)
         {
@@ -50,6 +54,7 @@ namespace AllBookedUp.Server.Controllers
             return Ok(result);
         }
 
+        //retrieves search suggestions from ProductService class
         [HttpGet("SearchSuggestions/{searchText}")]
         public async Task<ActionResult<ServiceResponse<List<string>>>> GetProductSearchSuggestions(string searchText)
         {
@@ -57,6 +62,7 @@ namespace AllBookedUp.Server.Controllers
             return Ok(result);
         }
 
+        //retrieves featured products from ProductService class
         [HttpGet("featured")]
         public async Task<ActionResult<ServiceResponse<List<Product>>>> GetFeaturedProducts()
         {

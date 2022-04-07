@@ -36,11 +36,15 @@
         }
     }
 
+    //takes user to the Url for that product search
     public void SearchProducts()
     {
         NavigationManager.NavigateTo($"search/{searchText}/1");
     }
 
+
+    //Provides user recommendations
+    //shows user full products if search entered
     public async Task HandleSearch(KeyboardEventArgs args)
     {
         if (args.Key == null || args.Key.Equals("Enter"))

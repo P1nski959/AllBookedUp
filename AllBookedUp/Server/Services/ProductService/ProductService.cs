@@ -39,6 +39,7 @@ namespace AllBookedUp.Server.Services.ProductService
             return response;
         }
 
+        //Retrieves the Product by Id
         public async Task<ServiceResponse<Product>> GetProductById(int id)
         {
             var response = new ServiceResponse<Product>();
@@ -56,6 +57,7 @@ namespace AllBookedUp.Server.Services.ProductService
             return response;
         }
 
+        //Retrieves products from the service response class
         public async Task<ServiceResponse<List<Product>>> GetProducts()
         {
             var products = await _context.Products.ToListAsync();
@@ -67,6 +69,7 @@ namespace AllBookedUp.Server.Services.ProductService
             return response;
         }
 
+        //retrieves suggestions for the search feature from the service response class
         public async Task<ServiceResponse<List<string>>> GetProductSearchSuggestions(string searchText)
         {
             var products = await FindProductsBySearchText(searchText);
@@ -84,6 +87,7 @@ namespace AllBookedUp.Server.Services.ProductService
             return new ServiceResponse<List<string>> { Data = result };
         }
 
+        //retrieves products from the searched text
         public async Task<ServiceResponse<ProductSearchResult>> SearchProducts(string searchText, int page)
         {
             var pageResults = 2f;

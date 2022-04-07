@@ -9,7 +9,12 @@
 }
 
 .nav-menu {
-    background-image: linear-gradient(180deg, rgb(44, 62, 80), rgb(52, 73, 94) 70%);
+    background-image: linear-gradient(180deg, rgb(4, 146, 0), rgb(4, 146, 0) 70%);
+}
+
+.map {
+    text-align: center;
+    font-size: 30px;
 }
 
 .top-row {

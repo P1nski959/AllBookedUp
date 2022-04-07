@@ -99,6 +99,7 @@ namespace AllBookedUp.Server.Services.ProductService
                             .Take((int)pageResults)
                             .ToListAsync();
 
+            //adds pagination response at bottom of the page
             var response = new ServiceResponse<ProductSearchResult>
             {
                 Data = new ProductSearchResult
@@ -112,6 +113,7 @@ namespace AllBookedUp.Server.Services.ProductService
             return response;
         }
 
+        //Finds products by text searched
         private async Task<List<Product>> FindProductsBySearchText(string searchText)
         {
             return await _context.Products

@@ -31,11 +31,13 @@
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
+    //toggles navigation menu
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }
 
+    //displays categories on the navmenu
     protected override async Task OnInitializedAsync()
     {
         await CategoryService.GetCategories();

@@ -3,10 +3,12 @@
 
 @if (product == null)
 {
+    //Displays message product is null. ie. not found or doesn't exist
     <span>@message</span>
 }
 else
 {
+    //displays the product on the page
     <div class="media">
         <div class="media-img-wrapper mr-2">
             <img class="media-img" src="@product.ImageUrl" alt="@product.Title" />

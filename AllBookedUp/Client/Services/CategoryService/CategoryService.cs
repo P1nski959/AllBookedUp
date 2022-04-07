@@ -19,6 +19,7 @@ namespace AllBookedUp.Client.Services.CategoryService
 
         public List<Category> Categories { get; set; } = new List<Category>();
 
+        //retrieves available categories
         public async Task GetCategories()
         {
             var response = await _http.GetFromJsonAsync <ServiceResponse<List < Category >>> ("api/category");

@@ -25,12 +25,14 @@ namespace AllBookedUp.Client.Services.ProductService
 
         public event Action ProductsChanged;
 
+        //gets product by Id
         public async Task<ServiceResponse<Product>> GetProductById(int id)
         {
             var result = await _http.GetFromJsonAsync<ServiceResponse<Product>>($"api/product/{id}");
             return result;
         }
 
+        //gets products from service response
         public async Task GetProducts(string categoryUrl = null)
         {
             var result = categoryUrl == null ?
@@ -46,6 +48,7 @@ namespace AllBookedUp.Client.Services.ProductService
             ProductsChanged.Invoke();
         }
 
+        //gets suggestions from service response
         public async Task<List<string>> GetProductSearchSuggestions(string searchText)
         {
             var result = await _http.GetFromJsonAsync<ServiceResponse<List<string>>>($"api/product/searchsuggestions/{searchText}");

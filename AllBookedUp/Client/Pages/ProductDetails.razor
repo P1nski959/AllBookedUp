@@ -1,5 +1,8 @@
 ﻿@page "/product/{id:int}"
-@inject IProductService ProductService 
+@inject IProductService ProductService
+@inject ICartService1 CartService1
+@inject ILocalStorageService LocalStorage
+@inject IToastService ToastService
 
 @if (product == null)
 {
@@ -19,6 +22,9 @@ else
             <h4 class="price">
                 $@product.Price
             </h4>
+            <button class="btn btn-primary" @onclick="AddToCart">
+                <i class="oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Add to Cart
+            </button>
         </div>
     </div>
 }
@@ -44,5 +50,10 @@ else
         {
             product = result.Data;
         }
+    }
+
+    private async Task AddToCart()
+    {
+        await CartService1.AddToCart(product);
     }
 }

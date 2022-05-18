@@ -18,7 +18,8 @@ namespace AllBookedUp.Client.Services.CartService1
 
         public event Action OnChange;
 
-        public CartService1(ILocalStorageService localStorage,
+        public CartService1(
+            ILocalStorageService localStorage,
             IToastService toastService,
             IProductService productService)
         {
@@ -38,7 +39,7 @@ namespace AllBookedUp.Client.Services.CartService1
             await _localStorage.SetItemAsync("cart", cart);
 
             var prod = await _productService.GetProductById(product.Id);
-            //below line may be wrong
+
             _toastService.ShowSuccess(product.Title, "Added to cart:");
 
             OnChange.Invoke();

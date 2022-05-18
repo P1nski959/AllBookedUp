@@ -1,6 +1,7 @@
 ﻿@page "/product/{id:int}"
 @inject IProductService ProductService
 @inject ICartService1 CartService1
+@inject IWishlistService WishlistService
 @inject ILocalStorageService LocalStorage
 @inject IToastService ToastService
 
@@ -24,6 +25,9 @@ else
             </h4>
             <button class="btn btn-primary" @onclick="AddToCart">
                 <i class="oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Add to Cart
+            </button>
+            <button class="btn btn-primary" @onclick="AddToWishlist">
+                <i class="oi oi-book"></i>&nbsp;&nbsp;&nbsp;Add to Wishlist
             </button>
         </div>
     </div>
@@ -55,5 +59,10 @@ else
     private async Task AddToCart()
     {
         await CartService1.AddToCart(product);
+    }
+
+    private async Task AddToWishlist()
+    {
+        await WishlistService.AddToWishlist(product);
     }
 }

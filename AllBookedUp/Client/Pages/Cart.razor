@@ -30,13 +30,17 @@ else
 }
 
 @code {
+
+    //creates list of cart items
     List<CartItem> cartItems = new List<CartItem>();
 
+    //sets list of items to whatever items are currently in the cart
     protected override async Task OnInitializedAsync()
     {
         cartItems = await CartService1.GetCartItems();
     }
 
+    //deletes the item from cart
     private async Task DeleteItem(CartItem item)
     {
         await CartService1.DeleteItem(item);

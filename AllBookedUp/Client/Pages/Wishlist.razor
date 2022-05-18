@@ -33,6 +33,8 @@ else
 }
 
 @code {
+
+    //loads items from wishlist to cart
     List<CartItem> cartItems = new List<CartItem>();
 
     protected override async Task OnInitializedAsync()
@@ -40,12 +42,14 @@ else
         cartItems = await WishlistService.GetWishlistItems();
     }
 
+    //deletes wishlist item
     private async Task DeleteItem(CartItem item)
     {
         await WishlistService.DeleteItem(item);
         cartItems = await WishlistService.GetWishlistItems();
     }
 
+    //removes item from wishlist after its been added to cart
     private async Task AddItemToCart(CartItem item)
     {
         var result = await ProductService.GetProductById((item.ProductId));

@@ -25,6 +25,8 @@ else
 }
 
 @code {
+
+    //accesses the featured products from the ProductService
     protected override void OnInitialized()
     {
         ProductService.ProductsChanged += StateHasChanged;

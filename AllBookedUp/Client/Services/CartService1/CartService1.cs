@@ -6,6 +6,8 @@ using Blazored.Toast.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace AllBookedUp.Client.Services.CartService1
@@ -15,17 +17,20 @@ namespace AllBookedUp.Client.Services.CartService1
         private readonly ILocalStorageService _localStorage;
         private readonly IToastService _toastService;
         private readonly IProductService _productService;
+        private readonly HttpClient _http;
 
         public event Action OnChange;
 
         public CartService1(
             ILocalStorageService localStorage,
             IToastService toastService,
-            IProductService productService)
+            IProductService productService,
+            HttpClient http)
         {
             _localStorage = localStorage;
             _toastService = toastService;
             _productService = productService;
+            _http = http;
         }
 
         //adds item to cart
@@ -90,6 +95,19 @@ namespace AllBookedUp.Client.Services.CartService1
             await _localStorage.SetItemAsync("cart", cart);
             OnChange.Invoke();
 
+        }
+
+        public async Task EmptyCart()
+        {
+            await _localStorage.RemoveItemAsync("cart");
+            OnChange.Invoke();
+        }
+
+        public async Task<string> Checkout()
+        {
+            var result = await _http.PostAsJsonAsync("api/payment/checkout", await GetCartItems());
+            var url = await result.Content.ReadAsStringAsync();
+            return url;
         }
     }
 }

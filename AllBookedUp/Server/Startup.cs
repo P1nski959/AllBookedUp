@@ -1,5 +1,6 @@
 using AllBookedUp.Server.Data;
 using AllBookedUp.Server.Services.CategoryService;
+using AllBookedUp.Server.Services.PaymentService;
 using AllBookedUp.Server.Services.ProductService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +35,7 @@ namespace AllBookedUp.Server
             services.AddRazorPages();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IPaymentService, PaymentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

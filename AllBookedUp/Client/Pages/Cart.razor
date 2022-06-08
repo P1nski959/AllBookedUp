@@ -1,6 +1,8 @@
 ﻿@page "/cart"
 @inject ICartService1 CartService1
+@inject IProductService ProductService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
 <h3>Shopping Cart</h3>
 
@@ -31,7 +33,7 @@
     </div>
 
     <div style="text-align: center; margin-top: 10px;">
-        <button class="btn btn-primary btn-lg" @onclick="PlaceOrder">Place Order</button>
+        <button class="btn btn-primary btn-lg" @onclick="Download">Download</button>
     </div>
 </div>
     }
@@ -63,6 +65,19 @@
         string checkoutUrl = await CartService1.Checkout();
         NavigationManager.NavigateTo(checkoutUrl);
         await CartService1.EmptyCart();
+    }
+
+    private async Task Download()
+    {
+        var cart = await CartService1.GetCartItems();
+
+        foreach (var item in cart)
+        {
+            var book = await ProductService.GetProductById(item.ProductId);
+            await JSRuntime.InvokeVoidAsync("download", item.ProductTitle, book.Data.Description);
+        }
+
+
     }
 
 }

@@ -17,5 +17,6 @@ namespace AllBookedUp.Client.Services.ProductService
         Task<ServiceResponse<Product>> GetProductById(int id);
         Task SearchProducts(string searchText, int page);
         Task<List<string>> GetProductSearchSuggestions(string searchText);
+        Task GetProduct(int productId);
     }
 }

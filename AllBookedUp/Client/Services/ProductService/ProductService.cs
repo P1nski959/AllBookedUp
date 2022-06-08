@@ -24,6 +24,11 @@ namespace AllBookedUp.Client.Services.ProductService
 
         public event Action ProductsChanged;
 
+        public Task GetProduct(int productId)
+        {
+            throw new NotImplementedException();
+        }
+
         //gets product by Id
         public async Task<ServiceResponse<Product>> GetProductById(int id)
         {

@@ -1,4 +1,5 @@
 ﻿using AllBookedUp.Server.Services.PaymentService;
+using AllBookedUp.Shared;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -17,6 +18,13 @@ namespace AllBookedUp.Server.Controllers
         public PaymentController(IPaymentService paymentService)
         {
             _paymentService = paymentService;
+        }
+
+        [HttpPost("checkout")]
+        public ActionResult CreateCheckoutSession(List<CartItem> cartItems)
+        {
+            var session = _paymentService.CreateCheckoutSession(cartItems);
+            return Ok(session.Url);
         }
     }
 }

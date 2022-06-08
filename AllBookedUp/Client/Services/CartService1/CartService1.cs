@@ -42,6 +42,7 @@ namespace AllBookedUp.Client.Services.CartService1
                 cart = new List<Product>();
             }
             cart.Add(product);
+
             await _localStorage.SetItemAsync("cart", cart);
 
             var prod = await _productService.GetProductById(product.Id);

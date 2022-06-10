@@ -24,6 +24,7 @@
     <script src="_framework/blazor.webassembly.js"></script>
 
     <script>
+        //downloads the .txt file
         function download(filename, text) {
             var element = document.createElement('a');
             element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));

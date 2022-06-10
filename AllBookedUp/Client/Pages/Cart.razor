@@ -69,8 +69,10 @@
 
     private async Task Download()
     {
+        //accesses the cart service to access the items in cart
         var cart = await CartService1.GetCartItems();
 
+        //downloads the title and description
         foreach (var item in cart)
         {
             var book = await ProductService.GetProductById(item.ProductId);
